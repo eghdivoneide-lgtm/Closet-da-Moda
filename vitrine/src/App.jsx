@@ -16,9 +16,17 @@ function App() {
       <header className="profile-header">
         <div className="profile-img-container">
           <img 
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=250&auto=format&fit=crop" 
-            alt="Foto de Perfil" 
+            src="/perfil.png" 
+            alt="Foto de Perfil da Ivoneide" 
             className="profile-img"
+            onError={(e) => {
+              // Tenta .jpg, depois tenta a extensão dupla que o Windows cria às vezes (.jpg.jpeg)
+              if (e.target.src.endsWith('.png')) {
+                e.target.src = '/perfil.jpg';
+              } else if (e.target.src.endsWith('.jpg')) {
+                e.target.src = '/perfil.jpg.jpeg';
+              }
+            }}
           />
         </div>
         <h1 className="store-name">Closet da Moda</h1>

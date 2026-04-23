@@ -16,15 +16,14 @@ function App() {
       <header className="profile-header">
         <div className="profile-img-container">
           <img 
-            src="/perfil.png" 
+            src="/arte.png" 
             alt="Foto de Perfil da Ivoneide" 
             className="profile-img"
             onError={(e) => {
-              // Tenta .jpg, depois tenta a extensão dupla que o Windows cria às vezes (.jpg.jpeg)
               if (e.target.src.endsWith('.png')) {
-                e.target.src = '/perfil.jpg';
+                e.target.src = '/arte.jpg';
               } else if (e.target.src.endsWith('.jpg')) {
-                e.target.src = '/perfil.jpg.jpeg';
+                e.target.src = '/arte.jpg.jpeg';
               }
             }}
           />
